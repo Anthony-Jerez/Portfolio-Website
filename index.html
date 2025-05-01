@@ -7,6 +7,34 @@
 <html>
 	<head>
 		<title>Anthony Jerez</title>
+		<!-- your global thumbnail override -->
+		<style>
+			/* All project thumbnails in the Features grid */
+			.features article a.image {
+				width: 100%;              /* let the card decide the width   */
+				height: 350px;            /* fixed frame height for every img*/
+				margin: 0 0 1.75em 0;     /* kill template’s side offsets    */
+				overflow: hidden;         /* hide any surplus if needed      */
+			}
+
+			.features article a.image img {
+				width: 100%;              /* fill wrapper’s width            */
+				height: 100%;             /* …and its height                 */
+				object-fit: contain;      /* show ENTIRE picture, no crop    */
+				object-position: center;  /* center it if letter-boxed       */
+				display: block;           /* remove inline-image whitespace  */
+			}
+			/* 1 — turn every project card into a vertical flex box   */
+			.features article {
+				display: flex;           /* column layout                 */
+				flex-direction: column;  /* title → text → link (top→down)*/
+			}
+
+			/* 2 — push the link to the bottom of that column          */
+			.features article a.special {
+				margin-top: auto;        /* gobbles remaining space above */
+			}
+		</style>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -66,21 +94,22 @@
 						<!-- Four -->
 						<section id="four" class="wrapper alt style1">
 							<div class="inner">
-							  <h2 class="major">WHAT I'VE DONE</h2>
+							  <h2 class="major">PROJECTS</h2>
 						  
 							  <section class="features">
 								<!-- CarIQ -->
 								<article>
-								  <a class="image"><img src="images/stock-portfolio.png" alt="" /></a>
+								  <a class="image"><img src="images/cariq.png" alt="" /></a>
 								  <h3 class="major">CarIQ</h3>
 								  <p>
-									<strong>Tech Stack:</strong> Swift, SwiftUI, UIKit, OpenAI API (GPT-4o), Firebase,
+									<strong>Tech Stack:</strong> Swift, SwiftUI, UIKit, OpenAI (GPT-4o), Firebase,
 									Computer Vision, Deep Learning<br/><br/>
 									Developing an iOS app for car enthusiasts that identifies a car’s make,
 									model, and generation from a photo using a computer-vision and deep-learning
 									system, and leverages GPT-4o to generate AI-powered spec comparisons between
 									selected cars.
 								  </p>
+								  <a href="https://github.com/mingleg7756/cardentification" class="special">GITHUB</a>
 								</article>
 						  
 								<!-- MicroMeter -->
@@ -89,38 +118,50 @@
 								  <h3 class="major">MicroMeter</h3>
 								  <p>
 									<strong>Tech Stack:</strong> React Native, Expo, JavaScript, TypeScript, Clerk,
-									OpenAI API (GPT-4o)<br/><br/>
+									OpenAI (GPT-4o)<br/><br/>
 									Developed a gamified nutrient-tracking iOS app in a team of four to help users
 									with nutrient deficiencies achieve daily intake goals, leveraging GPT-4o for
 									personalized recommendations. Boosted user engagement by 25 % through a
 									virtual-pet feature with dynamic animations using Reanimated and Lottie
 									to visualize progress and milestones.
 								  </p>
+								  <a href="https://github.com/okGus/SpringHackHealth" class="special">GITHUB</a>
 								</article>
 								<article>
 									<a class="image"><img src="images/stock-portfolio.png" alt="" /></a>
 									<h3 class="major">Stock Portfolio Manager Website</h3>
-									<p> Developed a website designed for users to manage their stock portfolios efficiently. Users can access real-time stock prices, execute buy and sell orders, review transaction history, and monitor current holdings. User data is securely stored in an SQLite database, ensuring reliable and scalable performance.</p>
-									
-									<a href="https://github.com/Anthony-Jerez/Stock-Portfolio-Manager-Website" class="special">VIEW ON GITHUB</a>
+									<p>
+										<strong>Tech Stack:</strong> Python, Flask, HTML, CSS, SQLite, Yahoo Finance API<br/><br/>
+										Developed a website designed for users to manage their stock portfolios efficiently. Users can access real-time stock quotes, execute buy and sell orders, review transaction history, and monitor current holdings. User data is securely stored in an SQLite database, ensuring reliable and scalable performance.
+									</p>
+									<a href="https://github.com/Anthony-Jerez/Stock-Portfolio-Manager-Website" class="special">GITHUB</a>
 								</article>
 								<article>
-									<a class="image"><img src="images/currency-xchange.png" alt="" /></a>
+									<a class="image"><img src="images/currency-exchange.png" alt="" /></a>
 									<h3 class="major">Currency Xchange</h3>
-									<p>Developed an iOS app tailored for frequent travelers and currency enthusiasts, providing seamless currency conversions using real-time FX rates sourced from a dedicated API. Integrated UserDefaults to allow users to save and manage their favorite conversion pairs on a watchlist, with automatic updates to reflect current rates and base amounts. Implemented an interactive line chart feature, allowing users to visualize real-time FX rates for selected base and target currencies.</p>
-									<a href="https://github.com/Anthony-Jerez/Currency-Converter" class="special">VIEW ON GITHUB</a>
+									<p>
+										<strong>Tech Stack:</strong> Swift, UIKit, Charts<br/><br/>
+										Developed an iOS app tailored for frequent travelers and currency enthusiasts, providing seamless currency conversions using real-time exchange rates sourced from the Exchange Rates API. Integrated UserDefaults to allow users to save and manage their favorite currency pairs on a watchlist, with automatic updates to reflect current rates. Implemented an interactive line chart feature, enabling users to explore historical exchange rate data for selected currency pairs over specified date ranges.
+									</p>
+									<a href="https://github.com/Anthony-Jerez/Currency-Converter" class="special">GITHUB</a>
 								</article>
 								<article>
 									<a class="image"><img src="images/Anthony-StudyPlan-Ex.png" alt="" /></a>
 									<h3 class="major">AI Study Schedule Builder</h3>
-									<p> Developed an AI-powered tool designed to assist students in constructing and optimizing their study schedules for final exam weeks. The tool considers individual factors such as time availability, prioritization of subjects, and specific academic goals, allowing users to manage their time effectively and maximize their performance.</p>
-									<a href="https://github.com/Anthony-Jerez/FinalFocus-Planner" class="special">VIEW ON GITHUB</a>
+									<p>
+										<strong>Tech Stack:</strong> Python, Matplotlib, OpenAI (GPT-4o)<br/><br/>
+										Developed an AI-powered tool designed to assist students in constructing and optimizing their study schedules for final exam weeks. The tool considers individual factors such as time availability, prioritization of subjects, and specific academic goals, allowing users to manage their time effectively and maximize their performance.
+									</p>
+									<a href="https://github.com/Anthony-Jerez/FinalFocus-Planner" class="special">GITHUB</a>
 								</article>
 								<article>
 									<a class="image"><img src="images/tower-edges copy.bmp" alt="" /></a>
 									<h3 class="major">BMP Filter Pro</h3>
-									<p>Developed a image processing tool, enabling users to apply filters (grayscale, reflection, blur, edge detection) to their images. Implemented Sobel edge detection, enhancing the app's capability to detect edges accurately.</p>
-									<a href="https://github.com/Anthony-Jerez/BMP-Image-Filter-Gen" class="special">VIEW ON GITHUB</a>
+									<p>
+										<strong>Tech Stack:</strong> C, Image Processing<br/><br/>
+										Developed a image processing tool, enabling users to apply filters (grayscale, reflection, blur, edge detection) to their images. Implemented Sobel edge detection, enhancing the app's capability to detect edges accurately.
+									</p>
+									<a href="https://github.com/Anthony-Jerez/BMP-Image-Filter-Gen" class="special">GITHUB</a>
 								</article>
 							  </section>
 							</div>
